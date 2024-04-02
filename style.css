@@ -7,32 +7,94 @@
     margin: 0;
     padding: 0;
 }
-
 body{
+    color: #474747;
     font-family: "Inter";
+    background-color: #F9F9F9;
 }
 
-.intro{
+/* About me section */
+#intro{
     margin: auto;
     text-align: center;
     padding-top: 8rem;
 }
-
 #name{
+    color: #18181B;
     font-family: "Plus Jakarta Sans", "Inter";
     font-size: 3.5rem;
     font-weight: 800; /* Extra Bold */
 }
 #about{
     padding-top: 3rem;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 30%;
+    padding-right: 30%;
+    text-align: justify;
 }
 
+/* Links */
+#nav{
+    align-items: center;
+}
+#nav-links{
+    display: flex;
+    list-style: none;
+
+    justify-content: center;
+    gap: 5%;
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+a{
+    color: #474747;
+    text-decoration: none;
+    
+}
+a:hover{
+    color: #18181B;
+    text-decoration: underline;
+    text-underline-offset: 0.75rem;
+    text-decoration-color: #474747;
+}
+
+/*Main Project Area*/
+.main{
+    background-color: #EBECF5;
+}
+#bump{
+    padding-bottom:4rem;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px 20px 0px 0px;
+}
+#project-holder{
+    padding-bottom: 100rem;
+}
+
+/*Project Elements
+
 /*Responsive*/
+@media only screen and (max-width:1100px) {
+    #about{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    #bump{
+        width: 80%;
+    }
+}
 @media only screen and (max-width:800px) {
     #about{
         padding-left: 15%;
         padding-right: 15%;
+    }
+    #name{
+        color: #18181B;
+        font-family: "Plus Jakarta Sans", "Inter";
+        font-size: 3rem;
+        font-weight: 800; /* Extra Bold */
     }
 }
