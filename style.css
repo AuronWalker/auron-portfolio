@@ -85,7 +85,7 @@ a:hover{
     padding-bottom: 4rem;
 
     position: relative;
-    top: -1rem;
+    top: -1.5rem;
     text-align: justify;
 
     border-radius: 20px;
@@ -93,15 +93,35 @@ a:hover{
 .project-name{
     width: 50%;
     padding-right: 2rem;
-    padding-left: 4rem;
+    padding-left: 3rem;
 
     text-align: center;
+    font-family: "Plus Jakarta Sans", "Inter";
     font-size: 2rem;
     font-weight: 600; /* Semi Bold */
 }
-.quick-description{
+.project-description{
     padding-right: 4rem;
 }
+
+/* Active Project */
+.project.active{
+    
+}
+.holder{
+    flex-direction: column;
+}
+.project-gif{
+    width: 40%;
+    height: 40%;
+
+    border-color:#474747; 
+    border-bottom:0.3rem; 
+    border-left:0.3rem; 
+    border-right:0.3rem;
+    border-style: solid;
+}
+
 /*Responsive*/
 @media only screen and (max-width:1300px) {
     #bump{
@@ -139,7 +159,7 @@ a:hover{
         margin: auto;
         margin-bottom: 1rem;
     }
-    .quick-description{
+    .project-description{
         padding-right: 3rem;
         padding-left: 3rem;
     }
