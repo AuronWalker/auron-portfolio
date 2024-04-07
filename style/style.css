@@ -74,53 +74,7 @@ a:hover{
     padding-bottom: 100rem;
 }
 
-/*Project Elements*/
-.project{
-    display: flex;
-    background-color: #F9F9F9;
-    margin: auto;
-    margin-bottom: 4rem;
-    width: 55%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
 
-    position: relative;
-    top: -1.5rem;
-    text-align: justify;
-
-    border-radius: 20px;
-}
-.project-name{
-    width: 50%;
-    padding-right: 2rem;
-    padding-left: 3rem;
-
-    text-align: center;
-    font-family: "Plus Jakarta Sans", "Inter";
-    font-size: 2rem;
-    font-weight: 600; /* Semi Bold */
-}
-.project-description{
-    padding-right: 4rem;
-}
-
-/* Active Project */
-.project.active{
-    
-}
-.holder{
-    flex-direction: column;
-}
-.project-gif{
-    width: 40%;
-    height: 40%;
-
-    border-color:#474747; 
-    border-bottom:0.3rem; 
-    border-left:0.3rem; 
-    border-right:0.3rem;
-    border-style: solid;
-}
 
 /*Responsive*/
 @media only screen and (max-width:1300px) {
@@ -130,11 +84,26 @@ a:hover{
     .project{
         width: 70%;
     }
+    .project:hover {
+        width: 74%;
+    
+    }
+    .project.active:hover {
+        width:71%;
+    }
 }
 @media only screen and (max-width:1100px) {
     #about{
         padding-left: 20%;
         padding-right: 20%;
+    }
+    .project-gif{
+        margin-top: 2rem;
+    }
+}
+@media only screen and (max-width:900px) {
+    .project-gif{
+        margin-top: 6rem;
     }
 }
 @media only screen and (max-width:800px) {
@@ -162,5 +131,13 @@ a:hover{
     .project-description{
         padding-right: 3rem;
         padding-left: 3rem;
+    }
+    .project.active{
+        flex-direction: column-reverse;
+    }
+    .project-gif{
+        margin-top: 2rem;
+        width: 80%;
+        height: 80%;
     }
 }

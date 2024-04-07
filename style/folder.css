@@ -1,0 +1,37 @@
+/*Project Elements*/
+.folder{
+    display: flex;
+    background-color: #F9F9F9;
+    margin: auto;
+    margin-bottom: 4rem;
+    width: 55%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    position: relative;
+    top: -1.5rem;
+    text-align: justify;
+
+    border-radius: 20px;
+    transition: all 0.5s;
+    box-shadow: 0.1rem 0.3rem;
+}
+.folder:hover {
+    width: 59%;
+}
+.folder.active:hover {
+    width:56%;
+}
+.folder-name{
+    width: 60%;
+    padding-right: 2rem;
+    padding-left: 3rem;
+
+    text-align: center;
+    font-family: "Plus Jakarta Sans", "Inter";
+    font-size: 2.5rem;
+    font-weight: 600; /* Semi Bold */
+}
+.folder-description{
+    padding-right: 4rem;
+}
