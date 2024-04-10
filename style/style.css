@@ -81,12 +81,11 @@ a:hover{
     #bump{
         width: 80%;
     }
-    .project{
+    .project, .folder{
         width: 70%;
     }
-    .project:hover {
+    .project:hover, .folder:hover{
         width: 74%;
-    
     }
     .project.active:hover {
         width:71%;
@@ -120,15 +119,15 @@ a:hover{
 }
 /* Change Projects to be mobile frendily*/
 @media only screen and (max-width:800px) {
-    .project{
+    .project, .folder{
         flex-direction: column;
     }
-    .project-name{
+    .project-name, .folder-name{
         padding: 0;
         margin: auto;
         margin-bottom: 1rem;
     }
-    .project-description{
+    .project-description, .folder-description{
         padding-right: 3rem;
         padding-left: 3rem;
     }
@@ -139,5 +138,34 @@ a:hover{
         margin-top: 2rem;
         width: 80%;
         height: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .folder-image{
+        height: 3rem;
+        position: absolute;
+        left:0;
+        margin-left: 0rem;
+        top:0;
+        margin-top: 4rem;
+    }
+}
+@media only screen and (max-width:635px) {
+    .folder-image{
+        display: none;
+    }
+    .folder-name{
+        margin-left: 3rem;
+    }
+    .folder-description{
+        padding-right: 0;
+    }
+}
+@media only screen and (max-width:320px) {
+    .folder-name{
+        margin-left: 1rem;
+    }
+    #nav-links{
+        padding-bottom: 5rem;
     }
 }

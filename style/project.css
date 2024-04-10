@@ -14,7 +14,7 @@
 
     border-radius: 20px;
     transition: all 0.5s;
-    box-shadow: 0.1rem 0.3rem;
+    box-shadow: 0rem 0.3rem;
 }
 .project:hover {
     width: 59%;

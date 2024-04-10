@@ -4,7 +4,6 @@ const projects = document.getElementsByClassName("project");
 makeButton(projects);
 
 function makeButton(element){
-    console.log(despcriptions.mapMakerDescription);
     for(var i=0; i<element.length; i++){
         element[i].addEventListener("click", function(){
             toggleActive(this);

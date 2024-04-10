@@ -14,7 +14,7 @@
 
     border-radius: 20px;
     transition: all 0.5s;
-    box-shadow: 0.1rem 0.3rem;
+    box-shadow: 0rem 0.3rem;
 }
 .folder:hover {
     width: 59%;
@@ -24,8 +24,8 @@
 }
 .folder-name{
     width: 60%;
-    padding-right: 2rem;
-    padding-left: 3rem;
+    margin: auto;
+    padding-bottom: 0.5rem;
 
     text-align: center;
     font-family: "Plus Jakarta Sans", "Inter";
@@ -33,5 +33,12 @@
     font-weight: 600; /* Semi Bold */
 }
 .folder-description{
-    padding-right: 4rem;
+    margin-right: 3rem;
+}
+.folder-image{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1rem;
+    width:10rem;
+    height: 6rem;
 }
