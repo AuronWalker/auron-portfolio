@@ -6,11 +6,10 @@ makeButton(projects);
 function makeButton(element){
     for(var i=0; i<element.length; i++){
         element[i].addEventListener("click", function(){
-            toggleActive(this);
-            if(this.classList.contains("active")){
+            if(!this.classList.contains("active")){
+                this.classList.add("active");
                 createActiveDisplay(this);
-            }else{
-                removeActiveDisplay(this);
+                removeActiveAllButCurrent(this, element);
             }
         })
     }
@@ -49,6 +48,8 @@ function removeActiveDisplay(parent){
     const projectGif = parent.getElementsByClassName("project-gif");
     const header = holder[0].getElementsByClassName("header");
 
+    parent.classList.remove("active");
+
     parent.appendChild(header[0].children[0]);
     holder[0].removeChild(header[0]);
     changeParents(holder[0], parent);
@@ -60,16 +61,19 @@ function removeActiveDisplay(parent){
     toggleActiveChildren(parent.children);
 }
 
+function removeActiveAllButCurrent(current, projects){
+    for(var i=0; i<projects.length; i++){
+        if(projects[i].classList.contains("active") && projects[i] != current){
+            removeActiveDisplay(projects[i]);
+        }
+    }
+}
+
 function toggleActiveChildren(projectChildren){
     for (var i = 0; i < projectChildren.length; i++) {
         var child = projectChildren[i];
         toggleActive(child);
     }
-}
-
-function toggleActive(project){
-    if(project.classList.contains("active")) project.classList.remove("active");
-    else project.classList.add("active");
 }
 
 //not a fan that it has to be done manually but it works for now

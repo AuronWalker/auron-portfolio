@@ -1,27 +1,4 @@
-/*Project Elements*/
-.folder{
-    display: flex;
-    background-color: #F9F9F9;
-    margin: auto;
-    margin-bottom: 4rem;
-    width: 55%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    position: relative;
-    top: -1.5rem;
-    text-align: justify;
-
-    border-radius: 20px;
-    transition: all 0.5s;
-    box-shadow: 0rem 0.3rem;
-}
-.folder:hover {
-    width: 59%;
-}
-.folder.active:hover {
-    width:56%;
-}
+/*Styling for the folder elements*/
 .folder-name{
     width: 60%;
     margin: auto;
