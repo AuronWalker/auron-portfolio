@@ -60,7 +60,7 @@ body{
     padding-top: 3rem;
     padding-left: 30%;
     padding-right: 30%;
-    text-align: justify;
+    text-align: center;
 }
 
 /* Links */
@@ -115,10 +115,10 @@ a:hover{
     .project, .folder{
         width: 70%;
     }
-    .project:hover, .folder:hover{
+    .base:hover{
         width: 74%;
     }
-    .project.active:hover {
+    .base.active:hover {
         width:71%;
     }
 }
@@ -135,6 +135,10 @@ a:hover{
     .project-gif{
         margin-top: 6rem;
     }
+    .folder-item{
+        padding-right: 5rem;
+        padding-left: 5em;
+    }
 }
 @media only screen and (max-width:800px) {
     #about{
@@ -150,7 +154,7 @@ a:hover{
 }
 /* Change Projects to be mobile frendily*/
 @media only screen and (max-width:800px) {
-    .project, .folder{
+    .base{
         flex-direction: column;
     }
     .project-name, .folder-name{
@@ -162,7 +166,7 @@ a:hover{
         padding-right: 3rem;
         padding-left: 3rem;
     }
-    .project.active{
+    .base.active{
         flex-direction: column-reverse;
     }
     .project-gif{
@@ -180,6 +184,26 @@ a:hover{
         top:0;
         margin-top: 4rem;
     }
+    .folder-name.active{
+        width: 60%;
+        margin: auto;
+        padding-bottom: 0.5rem;
+    
+        text-align: center;
+        font-family: "Plus Jakarta Sans", "Inter";
+        font-size: 2.5rem;
+        font-weight: 600; /* Semi Bold */
+    }
+    .folder-description.active{
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    .folder-item{
+        justify-content: center;
+        text-align: center;
+        padding-left: auto;
+        padding-right: auto;
+    }
 }
 @media only screen and (max-width:635px) {
     .folder-image{
@@ -190,6 +214,19 @@ a:hover{
     }
     .folder-description{
         padding-right: 0;
+    }
+    .folder-name.active{
+        margin: auto;
+    }
+    .folder-description.active{
+        margin-right: 3rem;
+    }
+}
+@media only screen and (max-width:425px) {
+    .folder-item{
+        justify-content: left;
+        text-align: left;
+        padding-left: 0.5rem;
     }
 }
 @media only screen and (max-width:320px) {

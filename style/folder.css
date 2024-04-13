@@ -19,3 +19,40 @@
     width:10rem;
     height: 6rem;
 }
+
+/*Styling for when it has been activated*/
+.folder.active{
+
+}
+.folder-name.active{
+    text-align: left;
+    margin: 0;
+    font-size: 2rem;
+}
+.folder-holder{
+    background: #EBECF5;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-left: 4%;
+    margin-right: 5%;
+    justify-content: center;
+
+    border: 2px solid #474747;
+    border-radius: 20px;
+}
+.folder-item{
+    margin: 0;
+    padding-right: 7rem;
+    padding-left: 7em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: #F9F9F9;
+    white-space: nowrap;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    font-weight:600;
+    font-size: 1rem;
+    font-family: "Plus Jakarta Sans", "Inter";
+}
