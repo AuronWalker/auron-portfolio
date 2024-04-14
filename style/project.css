@@ -35,9 +35,9 @@
     height: 40%;
 
     border-color:#474747; 
-    border-bottom:0.3rem; 
-    border-left:0.3rem; 
-    border-right:0.3rem;
+    border-bottom:2px; 
+    border-left:2px; 
+    border-right:2px;
     border-style: solid;
     margin-left: 2rem;
 }
@@ -56,4 +56,12 @@
     font-family: "Plus Jakarta Sans", "Inter";
     font-size: 1rem;
     font-weight: 600;
+
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.source:hover{
+    color: #18181B;
 }

@@ -21,9 +21,6 @@
 }
 
 /*Styling for when it has been activated*/
-.folder.active{
-
-}
 .folder-name.active{
     text-align: left;
     margin: 0;
@@ -40,7 +37,6 @@
     justify-content: center;
 
     border: 2px solid #474747;
-    border-radius: 20px;
 }
 .folder-item{
     margin: 0;
@@ -55,4 +51,7 @@
     font-weight:600;
     font-size: 1rem;
     font-family: "Plus Jakarta Sans", "Inter";
+}
+.folder-item:hover{
+    color: #18181B;
 }

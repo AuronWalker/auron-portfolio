@@ -80,11 +80,12 @@ body{
     font-size: 1.5rem;
 }
 a{
-    color: #474747;
     text-decoration: none;
-    
+    color: #474747;
+    cursor: pointer;
+    user-select: none;
 }
-a:hover{
+.link:hover{
     color: #18181B;
     text-decoration: underline;
     text-underline-offset: 0.75rem;
@@ -102,7 +103,7 @@ a:hover{
     border-radius: 20px 20px 0px 0px;
 }
 #project-holder{
-    padding-bottom: 100rem;
+    padding-bottom: 1rem;
 }
 
 

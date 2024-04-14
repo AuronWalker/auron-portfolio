@@ -28,7 +28,7 @@ function makeButton(element){
 function createActiveDisplayProject(parent){
     const holder = document.createElement("div");
     const header = document.createElement("div");
-    const source = document.createElement("div");
+    const sourceLink = document.createElement("a");
     const projectGif = document.createElement("img");
 
     parent.children[1].innerHTML = getProjectFullDescription(parent.id);
@@ -37,11 +37,16 @@ function createActiveDisplayProject(parent){
     projectGif.classList.add("project-gif");
     holder.classList.add("holder");
     header.classList.add("header");
-    source.classList.add("source");
-    source.innerHTML = "Source";
+
+    
+    sourceLink.classList.add("source");
+    sourceLink.innerHTML = "Source";
+    //Don't forget to make it scalable :)
+    sourceLink.setAttribute("href", "https://github.com/WigglyGull/Map-Maker");
+    sourceLink.setAttribute("target", "_blank");
 
     header.appendChild(parent.children[0]);
-    header.appendChild(source);
+    header.appendChild(sourceLink);
     holder.appendChild(header);
 
     changeParents(parent, holder);
@@ -79,13 +84,17 @@ function createActiveDisplayFolder(parent){
     toggleActiveChildren(parent.children[1].children);
     
     holder.classList.add("folder-holder");
-    
 
     for (var i = 0; i < length; i++) {
+        const link = document.createElement("a");
         const newItem =  document.createElement("div");
         newItem.classList.add("folder-item");
         newItem.innerHTML = getFolderProjectName(parent.id, i);
-        holder.appendChild(newItem);
+
+        link.setAttribute("href", "https://github.com/WigglyGull");
+        link.setAttribute("target", "_blank");
+        link.appendChild(newItem);
+        holder.appendChild(link);
     }
     parent.removeChild(img[0]);
     parent.insertBefore(holder, parent.firstChild);
@@ -128,7 +137,7 @@ function toggleActive(project){
     else project.classList.add("active");
 }
 
-//All of these are sperate objects to make scalability easier
+//All of these are sperate functions to make scalability easier
 function getGifSource(projectId){
     if(projectId == "MapMaker") return "./assets/gifs/MapMaker.gif";
     else if(projectId == "Prototypes") return "./assets/svgs/folder.svg";
@@ -147,7 +156,6 @@ function getProjectFullDescription(projectId){
 
 function getFolderLength(projectId){
     if(projectId == "Prototypes") return 3;
-    
 }
 
 function getFolderProjectName(projectId, currentItem){
