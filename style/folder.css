@@ -40,8 +40,8 @@
 }
 .folder-item{
     margin: 0;
-    padding-right: 7rem;
-    padding-left: 7em;
+    padding-right: 2rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background: #F9F9F9;
@@ -51,6 +51,7 @@
     font-weight:600;
     font-size: 1rem;
     font-family: "Plus Jakarta Sans", "Inter";
+    justify-self: center;
 }
 .folder-item:hover{
     color: #18181B;

@@ -91,7 +91,7 @@ function createActiveDisplayFolder(parent){
         newItem.classList.add("folder-item");
         newItem.innerHTML = getFolderProjectName(parent.id, i);
 
-        link.setAttribute("href", "https://github.com/WigglyGull");
+        link.setAttribute("href", getFolderProjectLink(parent.id, i));
         link.setAttribute("target", "_blank");
         link.appendChild(newItem);
         holder.appendChild(link);
@@ -137,11 +137,10 @@ function toggleActive(project){
     else project.classList.add("active");
 }
 
-//All of these are sperate functions to make scalability easier
+//All of these are sperate functions to make scalability easier when adding more projects :)
 function getGifSource(projectId){
     if(projectId == "MapMaker") return "./assets/gifs/MapMaker.gif";
     else if(projectId == "Prototypes") return "./assets/svgs/folder.svg";
-    
 }
 
 function getProjectDescription(projectId){
@@ -163,6 +162,14 @@ function getFolderProjectName(projectId, currentItem){
         if(currentItem == 0) return despcriptions.prototypesItem1;
         else if(currentItem == 1) return despcriptions.prototypesItem2;
         else if(currentItem == 2) return despcriptions.prototypesItem3;
+    }
+}
+
+function getFolderProjectLink(projectId, currentItem){
+    if(projectId == "Prototypes"){
+        if(currentItem == 0) return despcriptions.prototypesLink1;
+        else if(currentItem == 1) return despcriptions.prototypesLink2;
+        else if(currentItem == 2) return despcriptions.prototypesLink3;
     }
 }
 

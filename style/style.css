@@ -84,6 +84,7 @@ a{
     color: #474747;
     cursor: pointer;
     user-select: none;
+    justify-content: center;
 }
 .link:hover{
     color: #18181B;
@@ -104,6 +105,15 @@ a{
 }
 #project-holder{
     padding-bottom: 1rem;
+}
+.in-text-link{
+    color: #006cbd;
+}
+.in-text-link:hover{
+    color: #18181B;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+    text-decoration-color: #474747;
 }
 
 
@@ -137,8 +147,8 @@ a{
         margin-top: 6rem;
     }
     .folder-item{
-        padding-right: 5rem;
-        padding-left: 5em;
+        padding-right: 1rem;
+        padding-left: 1em;
     }
 }
 @media only screen and (max-width:800px) {
