@@ -130,9 +130,6 @@ a{
     .base:hover{
         width: 74%;
     }
-    .base.active:hover {
-        width:71%;
-    }
 }
 @media only screen and (max-width:1100px) {
     #about{
@@ -222,7 +219,13 @@ a{
         width: 100%;
     }
     .base{
-        width: 90%;
+        width: 95%;
+    }
+    .base:hover{
+        width: 100%;
+    }
+    .base.active:hover{
+        width: 95%;
     }
     .folder-image{
         display: none;
@@ -241,9 +244,6 @@ a{
     }
 }
 @media only screen and (max-width:425px) {
-    .base{
-        width: 95%;
-    }
     .folder-item{
         justify-content: left;
         text-align: left;
