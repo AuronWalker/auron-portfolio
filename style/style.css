@@ -98,6 +98,7 @@ a{
     background-color: #EBECF5;
 }
 #bump{
+    transition: all 0.5s;
     padding-bottom:4rem;
     width: 60%;
     margin: auto;
@@ -123,7 +124,7 @@ a{
     #bump{
         width: 80%;
     }
-    .project, .folder{
+    .base{
         width: 70%;
     }
     .base:hover{
@@ -217,6 +218,12 @@ a{
     }
 }
 @media only screen and (max-width:635px) {
+    #bump{
+        width: 100%;
+    }
+    .base{
+        width: 90%;
+    }
     .folder-image{
         display: none;
     }
@@ -234,6 +241,9 @@ a{
     }
 }
 @media only screen and (max-width:425px) {
+    .base{
+        width: 95%;
+    }
     .folder-item{
         justify-content: left;
         text-align: left;
