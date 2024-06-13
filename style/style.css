@@ -43,6 +43,10 @@ body{
     width:55%;
 }
 
+.folder{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
 
 /* About me section */
 #intro{

@@ -2,7 +2,7 @@
 .folder-name{
     width: 60%;
     margin: auto;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
 
     text-align: center;
     font-family: "Plus Jakarta Sans", "Inter";
@@ -15,9 +15,8 @@
 .folder-image{
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 1rem;
-    width:10rem;
-    height: 6rem;
+    margin-top: 0rem;
+    width:7rem;
 }
 
 /*Styling for when it has been activated*/
