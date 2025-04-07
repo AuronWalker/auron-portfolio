@@ -54,4 +54,6 @@
 }
 .folder-item:hover{
     color: #18181B;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
 }

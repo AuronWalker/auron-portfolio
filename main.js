@@ -1,4 +1,5 @@
-import * as despcriptions from "./descriptions.js";
+const response = await fetch("./descriptions.json");
+const descriptions = await response.json();
 const projects = document.getElementsByClassName("project");
 const folders = document.getElementsByClassName("folder");
 
@@ -42,7 +43,7 @@ function createActiveDisplayProject(parent){
     sourceLink.classList.add("source");
     sourceLink.innerHTML = "Source";
     //Don't forget to make it scalable :)
-    sourceLink.setAttribute("href", "https://github.com/WigglyGull/Map-Maker");
+    sourceLink.setAttribute("href", "https://github.com/AuronWalker/Map-Maker");
     sourceLink.setAttribute("target", "_blank");
 
     header.appendChild(parent.children[0]);
@@ -144,13 +145,13 @@ function getGifSource(projectId){
 }
 
 function getProjectDescription(projectId){
-    if(projectId == "MapMaker") return despcriptions.mapMakerDescription;
-    else if(projectId =="Prototypes") return despcriptions.prototypesDescription;
+    if(projectId == "MapMaker") return descriptions["MapMaker"].description;
+    else if(projectId =="Prototypes") return descriptions["Prototypes"].description;
 }
 
 function getProjectFullDescription(projectId){
-    if(projectId == "MapMaker") return despcriptions.mapMakerFullDescription;
-    else if(projectId == "Prototypes") return despcriptions.prototypesFullDescription;
+    if(projectId == "MapMaker") return descriptions["MapMaker"].fullDescription;
+    else if(projectId == "Prototypes") return descriptions["Prototypes"].fullDescription;
 }
 
 function getFolderLength(projectId){
@@ -159,17 +160,13 @@ function getFolderLength(projectId){
 
 function getFolderProjectName(projectId, currentItem){
     if(projectId == "Prototypes"){
-        if(currentItem == 0) return despcriptions.prototypesItem1;
-        else if(currentItem == 1) return despcriptions.prototypesItem2;
-        else if(currentItem == 2) return despcriptions.prototypesItem3;
+        return descriptions["Prototypes"].items[currentItem].name;
     }
 }
 
 function getFolderProjectLink(projectId, currentItem){
     if(projectId == "Prototypes"){
-        if(currentItem == 0) return despcriptions.prototypesLink1;
-        else if(currentItem == 1) return despcriptions.prototypesLink2;
-        else if(currentItem == 2) return despcriptions.prototypesLink3;
+        return descriptions["Prototypes"].items[currentItem].link;
     }
 }
 

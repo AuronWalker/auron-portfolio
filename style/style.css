@@ -265,3 +265,10 @@ a{
         padding-bottom: 5rem;
     }
 }
+
+/* currently disabling dark mode will add custom colours later */
+@media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: light;
+    }
+  }
