@@ -42,12 +42,13 @@ function createActiveDisplayProject(parent){
     
     sourceLink.classList.add("source");
     sourceLink.innerHTML = "Source";
+      
     //Don't forget to make it scalable :)
     sourceLink.setAttribute("href", "https://github.com/AuronWalker/Map-Maker");
     sourceLink.setAttribute("target", "_blank");
+    if(parent.id == "Map Maker")header.appendChild(sourceLink);
 
     header.appendChild(parent.children[0]);
-    header.appendChild(sourceLink);
     holder.appendChild(header);
 
     changeParents(parent, holder);
@@ -142,16 +143,15 @@ function toggleActive(project){
 function getGifSource(projectId){
     if(projectId == "MapMaker") return "./assets/gifs/MapMaker.gif";
     else if(projectId == "Prototypes") return "./assets/svgs/folder.svg";
+    else if(projectId == "AI Predictive Servicing") return "./assets/SkopeAi.png";
 }
 
 function getProjectDescription(projectId){
-    if(projectId == "MapMaker") return descriptions["MapMaker"].description;
-    else if(projectId =="Prototypes") return descriptions["Prototypes"].description;
+    return descriptions[projectId].description;
 }
 
 function getProjectFullDescription(projectId){
-    if(projectId == "MapMaker") return descriptions["MapMaker"].fullDescription;
-    else if(projectId == "Prototypes") return descriptions["Prototypes"].fullDescription;
+    return descriptions[projectId].fullDescription;
 }
 
 function getFolderLength(projectId){

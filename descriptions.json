@@ -1,12 +1,17 @@
 {
+    "AI Predictive Servicing": {
+      "description": "AI-powered tool to predict why hardware is breaking to reduce maintenance cost.",
+      "fullDescription": "While working at <a class='in-text-link' target='_blank' href='https://skope.com/'>SKOPE</a>, I was responsible for building an app that reduced the cost of maintaining their fridges. To do this, I trained a neural network using <a class='in-text-link' target='_blank' href='https://www.tensorflow.org/'>TensorFlow</a> on their years of previous data to predict the issue based on a number of key points (the fridge model, the fault, etc.). This would be used by the tradies to help them get a better understanding of the issue they were facing. To connect them with the Neural Network a website was built using Flask. My excitement for this project resulted in having what began as a straightforward data analysis task quickly evolve into a full-stack development project. I can't wait to take that same excitement to help me solve more problems that have a similar open-endedness to them."
+    },
+
     "MapMaker": {
-      "description": "Map Maker is a small software project for quickly designing and prototyping map ideas.",
-      "fullDescription": "Map Maker is a small software project for quickly designing and prototyping map ideas. This project is packed with interesting features such as different-sized maps, Biomes and the ability to save maps. I learnt so much about the process of developing software with it being my first attempt at making an app. While I never realeased it I am still very proud of the project. Built with <a class='in-text-link' href='https://www.electronjs.org/'>Electron<a/> using <a class='in-text-link' href='https://www.javascript.com/'>Javascript<a/>"
+      "description": "Small software project for quickly designing and prototyping map ideas.",
+      "fullDescription": "Small software project for quickly designing and prototyping map ideas. This project is packed with interesting features such as different-sized maps, Biomes and the ability to save maps. I learnt so much about the process of developing software with it being my first attempt at making an app. While I never realeased it I am still very proud of the project. Built with <a class='in-text-link' target='_blank' href='https://www.electronjs.org/'>Electron</a> using <a class='in-text-link' target='_blank' href='https://www.javascript.com/'>Javascript</a>"
     },
     
     "Prototypes": {
-      "description": "A collection of visual prototypes were the key focus was recreating a intresting algorithim rather than a full project.",
-      "fullDescription": "A collection of visual prototypes where the key focus was recreating an interesting algorithm rather than a full project. These are some of my favourite projects as I get to focus and understand something specific that is visually cool to look at. Once I have made something that looks impressive I leave the prototype there to come back to if I need to recreate something for a full project later on.",
+      "description": "Collection of visual prototypes were the key focus was recreating a intresting algorithim rather than a full project.",
+      "fullDescription": "Collection of visual prototypes where the key focus was recreating an interesting algorithm rather than a full project. These are some of my favourite projects as I get to focus and understand something specific that is visually cool to look at. Once I have made something that looks impressive I leave the prototype there to come back to if I need to recreate something for a full project later on.",
       "items": [
         {
           "name": "Inverse Kinematic Sim",
