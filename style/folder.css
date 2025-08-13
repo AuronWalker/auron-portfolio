@@ -1,59 +1,119 @@
-/*Styling for the folder elements*/
-.folder-name{
+/* Styling for the folder elements */
+.folder-name {
     width: 60%;
     margin: auto;
     padding-bottom: 1rem;
-
     text-align: center;
-    font-family: "Plus Jakarta Sans", "Inter";
-    font-size: 2.5rem;
-    font-weight: 600; /* Semi Bold */
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #18181B;
 }
-.folder-description{
+
+.folder-description {
     margin-right: 3rem;
+    color: #555;
+    line-height: 1.5;
 }
-.folder-image{
+
+.folder-image {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 0rem;
-    width:7rem;
+    width: 6rem;
+    height: auto;
 }
 
-/*Styling for when it has been activated*/
-.folder-name.active{
+.folder-name.active {
     text-align: left;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
-.folder-holder{
-    background: #EBECF5;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
+
+.folder-holder {
+    background: #ffffff;
+    padding: 3%;
     margin-left: 4%;
     margin-right: 5%;
     justify-content: center;
-
-    border: 2px solid #474747;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
-.folder-item{
+
+.folder-item {
     margin: 0;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 0.6rem 1.5rem;
     background: #F9F9F9;
     white-space: nowrap;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-bottom: 0.5rem;
-    font-weight:600;
-    font-size: 1rem;
-    font-family: "Plus Jakarta Sans", "Inter";
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
     justify-self: center;
+    transition: background-color 0.3s ease;
 }
-.folder-item:hover{
+
+.folder-item:hover {
+    background-color: #ececec;
     color: #18181B;
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
+}
+
+/*Responsive*/
+@media only screen and (max-width: 900px) {
+    .folder-name {
+        font-size: 1.6rem;
+    }
+    .folder-description {
+        font-size: 0.95rem;
+        margin-right: 1.5rem;
+    }
+    .folder-image {
+        width: 5rem;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .folder-holder {
+        padding: 1.5rem;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .folder-name {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    .folder-description {
+        text-align: center;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    .folder-image {
+        display: block;
+        margin: 0 auto 1rem auto; /* center image */
+        width: 4.5rem;
+    }
+    .folder-item {
+        display: inline-block;
+        font-size: 0.9rem;
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .folder-name {
+        font-size: 1.2rem;
+    }
+    .folder-description {
+        font-size: 0.85rem;
+    }
+    .folder-item {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
 }

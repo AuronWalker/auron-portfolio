@@ -42,18 +42,30 @@ function createActiveDisplayProject(parent){
     
     sourceLink.classList.add("source");
     sourceLink.innerHTML = "Source";
-      
-    //Don't forget to make it scalable :)
-    sourceLink.setAttribute("href", "https://github.com/AuronWalker/Map-Maker");
-    sourceLink.setAttribute("target", "_blank");
-    if(parent.id == "Map Maker")header.appendChild(sourceLink);
 
     header.appendChild(parent.children[0]);
     holder.appendChild(header);
 
+    //Don't forget to make it scalable :)
+    sourceLink.setAttribute("href", "https://github.com/AuronWalker/Map-Maker");
+    sourceLink.setAttribute("target", "_blank");
+    if(parent.id == "MapMaker")header.appendChild(sourceLink);
+
     changeParents(parent, holder);
     parent.appendChild(projectGif);
     parent.appendChild(holder);
+
+    projectGif.addEventListener('load', () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = projectGif.naturalWidth;
+        canvas.height = projectGif.naturalHeight;
+        ctx.drawImage(projectGif, 0, 0);
+        const pixel = ctx.getImageData(0, 0, 1, 1).data;
+        const color = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+        projectGif.style.backgroundColor = color;
+    });
+
     
     toggleActiveChildren(holder.children);
     toggleActiveChildren(header.children);
@@ -143,7 +155,7 @@ function toggleActive(project){
 function getGifSource(projectId){
     if(projectId == "MapMaker") return "./assets/gifs/MapMaker.gif";
     else if(projectId == "Prototypes") return "./assets/svgs/folder.svg";
-    else if(projectId == "AI Predictive Servicing") return "./assets/SkopeAi.png";
+    else if(projectId == "AI Predictive Servicing") return "./assets/SkopeAi.svg";
 }
 
 function getProjectDescription(projectId){

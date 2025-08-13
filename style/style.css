@@ -3,278 +3,189 @@
 @import url("./assets/Inter/Inter-VariableFont_slnt\,wght.ttf");
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+/* ✅ CHANGE: Improved global font smoothing for sharper text */
+html {
+    -webkit-font-smoothing: antialiased; /* smoother font rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
-body{
-    color: #474747;
-    font-family: "Inter";
+
+body {
+    color: #3a3a3a; /* slightly softer than #474747 for less contrast strain */
+    font-family: "Inter", sans-serif;
     background-color: #F9F9F9;
+    line-height: 1.6; /* improves readability */
 }
 
 .base{
     display: flex;
-    background-color: #F9F9F9;
+    background-color: #ffffff;
     margin: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     width: 55%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 3rem;
 
     position: relative;
     top: -1.5rem;
     text-align: justify;
 
-    border-radius: 20px;
+    border-radius: 16px;
     transition: all 0.5s;
-    box-shadow: 0rem 0.3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 
     cursor: pointer;
     user-select: none;
 }
+
 .base.active{
     cursor: default;
 }
+
 .base:hover {
-    width: 57%;
-}
-.base.active:hover {
-    width:55%;
+    transform: translateY(-4px); /* subtle lift */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08); /* deeper hover shadow */
 }
 
-.folder{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.base.active:hover {
+    transform: none; /* active cards stay still */
+}
+
+.folder {
+    padding: 2.5rem 3rem;
 }
 
 /* About me section */
 #headshot{
     transition: all 0.5s;
-    height: 18rem;
-    width: 18rem;
+    height: 16rem;
+    width: 16rem;
     border-radius: 50%;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-#headshot:hover{
-    height: 20rem;
-    width: 20rem;
-    border-radius: 40%;
+#headshot:hover {
+    transform: scale(1.05); /* smoother zoom */
+    border-radius: 45%;
 }
 #intro{
     margin: auto;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 5rem;
 }
 #name{
     color: #18181B;
     font-family: "Plus Jakarta Sans", "Inter";
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800; /* Extra Bold */
+    margin-bottom: 1rem;
 }
 #about{
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-left: 30%;
     padding-right: 30%;
     text-align: center;
+    color: #555;
 }
 
 /* Links */
-#nav{
-    align-items: center;
-}
 #nav-links{
     display: flex;
     list-style: none;
 
     justify-content: center;
-    gap: 5%;
+    gap: 3rem;
     padding-top: 3rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 
     font-weight: 600; /* Semi Bold */
     font-size: 1.5rem;
 }
-a{
+
+a {
     text-decoration: none;
-    color: #474747;
+    color: #3a3a3a;
     cursor: pointer;
     user-select: none;
-    justify-content: center;
 }
-.link:hover{
-    color: #18181B;
-    text-decoration: underline;
-    text-underline-offset: 0.75rem;
-    text-decoration-color: #474747;
+
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
 }
 
 /*Main Project Area*/
 .main{
-    background-color: #EBECF5;
+    background-color: #f0f1f7;
 }
-#bump{
-    transition: all 0.5s;
-    padding-bottom:4rem;
+#bump {
+    transition: all 0.3s ease;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     width: 60%;
     margin: auto;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 16px 16px 0px 0px;
+    background: #f0f1f7;
 }
-#project-holder{
-    padding-bottom: 1rem;
-}
+
 .in-text-link{
     color: #006cbd;
+    transition: color 0.2s ease;
 }
 .in-text-link:hover{
     color: #18181B;
     text-decoration: underline;
     text-underline-offset: 0.25rem;
-    text-decoration-color: #474747;
 }
-
-
 
 /*Responsive*/
-@media only screen and (max-width:1300px) {
-    #bump{
-        width: 80%;
-    }
-    .base{
-        width: 70%;
-    }
-    .base:hover{
-        width: 74%;
-    }
-    .base.active:hover {
-        width:70%;
-    }
-}
 @media only screen and (max-width:1100px) {
-    #about{
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-    .project-gif{
-        margin-top: 2rem;
-    }
-}
-@media only screen and (max-width:900px) {
-    .project-gif{
-        margin-top: 6rem;
-    }
-    .folder-item{
-        padding-right: 1rem;
-        padding-left: 1em;
-    }
-}
-@media only screen and (max-width:800px) {
-    #about{
+    #about {
         padding-left: 15%;
         padding-right: 15%;
-    }
-    #name{
-        color: #18181B;
-        font-family: "Plus Jakarta Sans", "Inter";
-        font-size: 3rem;
-        font-weight: 800; /* Extra Bold */
+        font-size: 1rem;
     }
 }
-/* Change Projects to be mobile frendily*/
+
 @media only screen and (max-width:800px) {
-    .base{
-        flex-direction: column;
-    }
-    .project-name, .folder-name{
-        padding: 0;
-        margin: auto;
-        margin-bottom: 1rem;
-    }
-    .project-description, .folder-description{
-        padding-right: 3rem;
-        padding-left: 3rem;
-    }
-    .base.active{
-        flex-direction: column-reverse;
-    }
-    .project-gif{
-        margin-top: 2rem;
-        width: 80%;
-        height: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .folder-image{
-        height: 3rem;
-        position: absolute;
-        left:0;
-        margin-left: 0rem;
-        top:0;
-        margin-top: 4rem;
-    }
-    .folder-name.active{
-        width: 60%;
-        margin: auto;
-        padding-bottom: 0.5rem;
-    
-        text-align: center;
-        font-family: "Plus Jakarta Sans", "Inter";
+    #name {
         font-size: 2.5rem;
-        font-weight: 600; /* Semi Bold */
     }
-    .folder-description.active{
-        margin: auto;
-        margin-bottom: 2rem;
-    }
-    .folder-item{
-        justify-content: center;
-        text-align: center;
-        padding-left: auto;
-        padding-right: auto;
-    }
-}
-@media only screen and (max-width:635px) {
     #bump{
-        width: 100%;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
-    .base{
-        width: 95%;
-    }
-    .base:hover{
-        width: 100%;
-    }
-    .base.active:hover{
-        width: 95%;
-    }
-    .folder-image{
-        display: none;
-    }
-    .folder-name{
-        margin-left: 3rem;
-    }
-    .folder-description{
-        padding-right: 0;
-    }
-    .folder-name.active{
-        margin: auto;
-    }
-    .folder-description.active{
-        margin-right: 3rem;
+    #about {
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
-@media only screen and (max-width:425px) {
-    .folder-item{
-        justify-content: left;
-        text-align: left;
-        padding-left: 0.5rem;
+
+@media only screen and (max-width:635px) {
+    #bump {
+        width: 95%;
     }
-}
-@media only screen and (max-width:320px) {
-    .folder-name{
-        margin-left: 1rem;
-    }
-    #nav-links{
-        padding-bottom: 5rem;
+    .base {
+        width: 95%;
+        padding: 2rem;
     }
 }
 
@@ -283,4 +194,4 @@ a{
     :root {
       color-scheme: light;
     }
-  }
+}
