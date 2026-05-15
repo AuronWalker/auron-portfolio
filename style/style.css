@@ -1,197 +1,271 @@
 /* GENERAL */
-
-@import url("./assets/Inter/Inter-VariableFont_slnt\,wght.ttf");
+ 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-/* ✅ CHANGE: Improved global font smoothing for sharper text */
-html {
-    -webkit-font-smoothing: antialiased; /* smoother font rendering */
-    -moz-osx-font-smoothing: grayscale;
+ 
+/* Force light mode — overrides system dark mode preference */
+:root {
+    color-scheme: light only;
+ 
+    --bg:        #F7F6F2;
+    --surface:   #ffffff;
+    --border:    #E8E6E0;
+    --text:      #1C1C1A;
+    --muted:     #6B6860;
+    --accent:    #2D5BE3;
+    --accent-hover: #1a3fbf;
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 6px 24px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.10);
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+ 
+/* Hard override — every element must be light regardless of OS */
+html, body, * {
+    color-scheme: light only !important;
+}
+ 
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg) !important;
+}
+ 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+ 
 body {
-    color: #3a3a3a; /* slightly softer than #474747 for less contrast strain */
+    color: var(--text) !important;
+    background-color: var(--bg) !important;
     font-family: "Inter", sans-serif;
-    background-color: #F9F9F9;
-    line-height: 1.6; /* improves readability */
+    line-height: 1.65;
 }
-
-.base{
-    display: flex;
-    background-color: #ffffff;
-    margin: auto;
-    margin-bottom: 3rem;
-    width: 55%;
-    padding: 3rem;
-
-    position: relative;
-    top: -1.5rem;
-    text-align: justify;
-
-    border-radius: 16px;
-    transition: all 0.5s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-
-    cursor: pointer;
-    user-select: none;
-}
-
-.base.active{
-    cursor: default;
-}
-
-.base:hover {
-    transform: translateY(-4px); /* subtle lift */
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08); /* deeper hover shadow */
-}
-
-.base.active:hover {
-    transform: none; /* active cards stay still */
-}
-
-.folder {
-    padding: 2.5rem 3rem;
-}
-
-/* About me section */
-#headshot{
-    transition: all 0.5s;
-    height: 16rem;
-    width: 16rem;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-#headshot:hover {
-    transform: scale(1.05); /* smoother zoom */
-    border-radius: 45%;
-}
-#intro{
+ 
+/* ── INTRO ────────────────────────────────────── */
+#intro {
     margin: auto;
     text-align: center;
     padding-top: 5rem;
+    padding-bottom: 1rem;
+    max-width: 680px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
-#name{
-    color: #18181B;
+ 
+#headshot {
+    transition: transform var(--transition), border-radius var(--transition), box-shadow var(--transition);
+    height: 14rem;
+    width: 14rem;
+    border-radius: 50%;
+    margin-bottom: 1.75rem;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 0 0 4px var(--surface), 0 0 0 6px var(--border);
+}
+ 
+#headshot:hover {
+    transform: scale(1.02);
+}
+ 
+#name {
+    color: var(--text) !important;
     font-family: "Plus Jakarta Sans", "Inter";
-    font-size: 3rem;
-    font-weight: 800; /* Extra Bold */
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     margin-bottom: 1rem;
 }
-#about{
-    padding-top: 2rem;
-    padding-left: 30%;
-    padding-right: 30%;
+ 
+#about {
+    color: var(--muted) !important;
+    font-size: 1rem;
+    line-height: 1.75;
     text-align: center;
-    color: #555;
+    max-width: 540px;
+    margin: 0 auto;
 }
-
-/* Links */
-#nav-links{
+ 
+/* ── NAV LINKS ─────────────────────────────────── */
+#nav-links {
     display: flex;
     list-style: none;
-
     justify-content: center;
-    gap: 3rem;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-
-    font-weight: 600; /* Semi Bold */
-    font-size: 1.5rem;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4.5rem;
+    flex-wrap: wrap;
 }
-
+ 
 a {
     text-decoration: none;
-    color: #3a3a3a;
+    color: var(--text) !important;
     cursor: pointer;
     user-select: none;
 }
-
+ 
 .link {
     position: relative;
+    font-family: "Plus Jakarta Sans", "Inter";
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: var(--text) !important;
+    transition: color var(--transition);
 }
-
+ 
 .link::after {
     content: "";
     position: absolute;
     width: 0;
     height: 2px;
     left: 0;
-    bottom: -4px;
-    background-color: currentColor;
+    bottom: -3px;
+    background-color: var(--accent);
     transition: width 0.3s ease;
 }
-
+ 
+.link:hover {
+    color: var(--accent) !important;
+}
+ 
 .link:hover::after {
     width: 100%;
 }
-
-/*Main Project Area*/
-.main{
-    background-color: #f0f1f7;
+ 
+/* ── MAIN / BUMP ───────────────────────────────── */
+.main {
+    background-color: var(--bg) !important;
 }
+ 
 #bump {
-    transition: all 0.3s ease;
-    padding-bottom: 3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    width: 60%;
+    padding-bottom: 2.5rem;
+    padding-left: clamp(1rem, 5vw, 3rem);
+    padding-right: clamp(1rem, 5vw, 3rem);
+    width: min(66%, 900px);
     margin: auto;
-    border-radius: 16px 16px 0px 0px;
-    background: #f0f1f7;
+    border-radius: 20px 20px 0 0;
+    background: var(--bg) !important;
+}
+ 
+/* ── BASE CARD ─────────────────────────────────── */
+.base {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    width: min(66%, 900px);
+    padding: 2rem 2.5rem;
+ 
+    position: relative;
+    top: -1.5rem;
+    text-align: left;
+ 
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-shadow: var(--shadow-sm);
+ 
+    cursor: pointer;
+    user-select: none;
+}
+ 
+.base.active {
+    cursor: default;
+    align-items: center;
 }
 
-.in-text-link{
-    color: #006cbd;
-    transition: color 0.2s ease;
+.base:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
-.in-text-link:hover{
-    color: #18181B;
+ 
+.base.active:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+ 
+.folder {
+    padding: 2rem 2.5rem;
+}
+ 
+/* ── IN-TEXT LINKS ─────────────────────────────── */
+.in-text-link {
+    color: var(--accent) !important;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+ 
+.in-text-link:hover {
+    color: var(--accent-hover) !important;
     text-decoration: underline;
     text-underline-offset: 0.25rem;
 }
-
-/*Responsive*/
-@media only screen and (max-width:1100px) {
-    #about {
-        padding-left: 15%;
-        padding-right: 15%;
-        font-size: 1rem;
+ 
+/* ── RESPONSIVE ────────────────────────────────── */
+@media only screen and (max-width: 1100px) {
+    #bump, .base {
+        width: min(82%, 760px);
     }
 }
-
-@media only screen and (max-width:800px) {
+ 
+@media only screen and (max-width: 800px) {
     #name {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
-    #bump{
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-    #about {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-}
-
-@media only screen and (max-width:635px) {
     #bump {
-        width: 95%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 90%;
     }
     .base {
-        width: 95%;
-        padding: 2rem;
+        width: 90%;
+        padding: 1.75rem 2rem;
     }
 }
-
-/* currently disabling dark mode will add custom colours later */
+ 
+@media only screen and (max-width: 600px) {
+    #bump {
+        width: 96%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .base {
+        width: 96%;
+        padding: 1.5rem;
+    }
+    #nav-links {
+        gap: 1.5rem;
+        padding-bottom: 3rem;
+    }
+}
+ 
+@media only screen and (max-width: 400px) {
+    #headshot {
+        height: 11rem;
+        width: 11rem;
+    }
+    #name {
+        font-size: 2rem;
+    }
+    #about {
+        font-size: 0.92rem;
+    }
+}
+ 
+/* Force light regardless of prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
     :root {
-      color-scheme: light;
+        color-scheme: light only;
+    }
+    html, body {
+        background-color: var(--bg) !important;
+        color: var(--text) !important;
     }
 }

@@ -38,7 +38,6 @@ function createActiveDisplayProject(parent){
     projectGif.classList.add("project-gif");
     holder.classList.add("holder");
     header.classList.add("header");
-
     
     sourceLink.classList.add("source");
     sourceLink.innerHTML = "Source";
@@ -65,7 +64,6 @@ function createActiveDisplayProject(parent){
         const color = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
         projectGif.style.backgroundColor = color;
     });
-
     
     toggleActiveChildren(holder.children);
     toggleActiveChildren(header.children);
@@ -156,6 +154,8 @@ function getGifSource(projectId){
     if(projectId == "MapMaker") return "./assets/gifs/MapMaker.gif";
     else if(projectId == "Prototypes") return "./assets/svgs/folder.svg";
     else if(projectId == "AI Predictive Servicing") return "./assets/SkopeAi.svg";
+    else if(projectId == "Tait Communications") return "./assets/tait_intern_solo.jpg";
+    else if(projectId == "Automated Weeding Robot") return "./assets/Rover.png";
 }
 
 function getProjectDescription(projectId){

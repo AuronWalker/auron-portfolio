@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: light only;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Force light mode at the browser level -->
+    <meta name="color-scheme" content="light">
     <title>Auron Walker</title>
+    <!-- Google Fonts preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./style/project.css" />
     <link rel="stylesheet" href="./style/folder.css" />
     <link rel="stylesheet" href="./style/style.css" />
 </head>
 <body>
     <div id="intro">
-        <img id="headshot" src="./assets/headshot.jpg" alt="me">
+        <img id="headshot" src="./assets/headshot.jpg" alt="Auron Walker">
         <div id="name">Auron Walker</div>
-        <div id="about">Kia ora, my name is Auron. I love crafting code, solving puzzles, and bringing ideas to life. While most of my time is spent studying I’m using this space to share the personal, professional, and academic things I’ve been working on. I like making things that push me to be more creative or just a project I can learn from, whether it’s late-night debugging or just seeing what clicks. That interest has grown into a bunch of other areas so now I'm studying computer engineering because it covers so much more than just writing code. Check out some of my projects, I'm always building something so there's a bit of everything here.</div>
+        <div id="about">Kia ora, my name is Auron. I am a computer engineer. Using this space to share things I've been working on.</div>
     </div>
     <nav id="nav">
         <ul id="nav-links">
@@ -24,6 +29,14 @@
 
     <div class="main" id="bump"></div>
     <div class="main" id="project-holder">
+        <div class="project base" id="Automated Weeding Robot">
+            <div class="project-name">Automated Weeding Robot</div>
+            <div class="project-description">Autonomous rover system with GPS/RTK communication and real-time positioning.</div>
+        </div>
+        <div class="project base" id="Tait Communications">
+            <div class="project-name">Technical Support Automation</div>
+            <div class="project-description">System for turning technical data into faster, more accessible solutions for engineers and customers.</div>
+        </div>
         <div class="project base" id="AI Predictive Servicing">
             <div class="project-name">AI Predictive Servicing</div>
             <div class="project-description">AI-powered tool to predict why hardware is breaking to reduce maintenance cost.</div>
@@ -33,10 +46,10 @@
             <div class="project-description">Map Maker is a small software project for quickly designing and prototyping map ideas.</div>
         </div>
         <div class="folder base" id="Prototypes">
-            <img src="./assets/svgs/folder.svg" class="folder-image">
+            <img src="./assets/svgs/folder.svg" class="folder-image" alt="Folder">
             <div>
                 <div class="folder-name">Prototypes</div>
-                <div class="folder-description">A collection of visual prototypes were the key focus was recreating a intresting algorithim rather than a full project.</div>
+                <div class="folder-description">A collection of visual prototypes where the key focus was recreating an interesting algorithm rather than a full project.</div>
             </div>      
         </div>
     </div>

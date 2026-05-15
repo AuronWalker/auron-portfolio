@@ -1,132 +1,175 @@
-/*Styling for the project elements*/
-.project-name{
+/* ── PROJECT CARD ELEMENTS ─────────────────────── */
+ 
+/* Collapsed (default) card */
+.project-name {
     width: 60%;
-    padding-right: 2rem;
-    padding-left: 3rem;
-
-    text-align: center;
+    padding-right: 1.5rem;
+    padding-left: 0;
     font-family: "Plus Jakarta Sans", "Inter";
     font-size: 2rem;
     font-weight: 600;
-    color: #18181B;
+    line-height: 1.2;
+    color: var(--text) !important;
 }
-
-.project-description{
-    padding-right: 4rem;
-    color: #555;
-    line-height: 1.5;
+ 
+.project-description {
+    padding-right: 1rem;
+    color: var(--muted) !important;
+    line-height: 1.65;
+    font-size: 0.97rem;
+    margin-top: 0.5rem;
 }
-
-/* Active Project */
-.project-name.active{
-    padding: 0;
-    margin: auto;
-    margin-bottom: 1rem;
-}
-
-.project-description.active{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.holder{
-    flex-direction: column;
-}
-
-.header{
+ 
+.holder {
     display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+ 
+/* header: stack title then source button vertically */
+.header {
+    display: flex;
+    margin-left: auto;
+    align-items: flex-start;
+    margin: 0 0 0.75rem 0;
+    gap: 0;
+}
+ 
+.project-name.active {
+    padding: 0;
     margin: 0;
+    font-size: 1.75rem;
+    width: 100%;
 }
-
-.project-gif{
+ 
+.project-description.active {
+    padding: 0;
+    font-size: 0.97rem;
+}
+ 
+/* ── GIF ─────────────────────────────────────────── */
+.project-gif {
     width: 40%;
+    max-width: 300px;
     height: auto;
-
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    margin-left: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+ 
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin-right: 2rem;
+    margin-left: 0;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+    align-self: center;
 }
-
+ 
 .project-gif:hover {
     transform: scale(1.02);
+    box-shadow: var(--shadow-md);
 }
-
+ 
 .project.active img {
-  object-fit: contain;
+    object-fit: contain;
 }
-
+ 
+/* ── Source button ───────────────────────────────── */
 .source {
-    background-color: #D9D9D9;
-    position: relative;
-    border-radius: 40px;
-    height: 5%;
-    padding: 0.5rem 1rem;
-    margin-right: 2rem;
-    margin-left: auto; /* pushes it to the right */
-
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--text) !important;
+    color: var(--surface) !important;
+    border-radius: 100px;
+    padding: 0.45rem 1.1rem;
+    margin-top: 0.75rem;
+    margin-left: 0;
+    margin-right: 0;
+ 
     font-family: "Plus Jakarta Sans", "Inter";
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: 600;
-
+    letter-spacing: 0.01em;
+ 
     cursor: pointer;
     user-select: none;
     text-decoration: none;
-    transition: all 0.5s;
+    transition: background-color var(--transition), transform var(--transition);
+    white-space: nowrap;
+    align-self: flex-start;
 }
-
+ 
+.source::after {
+    content: "↗";
+    font-size: 0.82rem;
+}
+ 
 .source:hover {
-    background-color: #e1e1e1; /* ✅ CHANGE: hover uses background change instead of underline */
-    color: #18181B;
+    background-color: var(--accent) !important;
+    color: #fff !important;
+    transform: translateY(-1px);
 }
-
-/*Responsive*/
+ 
+/* ── RESPONSIVE ─────────────────────────────────── */
+ 
 @media only screen and (max-width: 900px) {
     .project-name {
-        font-size: 1.6rem; /* slightly smaller heading */
-        padding: 0 1.5rem;
+        font-size: 1.6rem;
         width: 100%;
+        padding-right: 1rem;
     }
     .project-description {
         font-size: 0.95rem;
-        padding: 0 1.5rem;
     }
     .project-gif {
-        margin: 1rem auto;
+        max-width: 240px;
+        margin-right: 1.75rem;
     }
 }
-
+ 
 @media only screen and (max-width: 650px) {
+    .base.project.active {
+        flex-direction: column;
+    }
+    .project-gif {
+        width: 100%;
+        max-width: 100%;
+        max-height: 200px;
+        margin: 0 0 1.25rem 0;
+        object-fit: cover;
+        align-self: stretch;
+    }
     .header {
-        flex-direction: column; /* stack image and text */
         align-items: center;
+        text-align: center;
     }
     .project-name {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
         text-align: center;
+        width: 100%;
         padding: 0;
+    }
+    .project-name.active {
+        text-align: center;
     }
     .project-description {
         text-align: center;
-        padding: 0 1rem;
-    }
-    .project-gif {
-        margin: 1rem auto;
+        padding: 0;
+        font-size: 0.92rem;
     }
     .source {
-        display: block;
-        margin: 1rem auto 0 auto; /* center on mobile */
-        font-size: 0.9rem;
+        align-self: center;
     }
 }
-
+ 
 @media only screen and (max-width: 400px) {
     .project-name {
         font-size: 1.2rem;
     }
     .project-description {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
     .source {
         font-size: 0.85rem;

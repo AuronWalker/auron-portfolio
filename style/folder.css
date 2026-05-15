@@ -1,110 +1,148 @@
-/* Styling for the folder elements */
+/* ── FOLDER CARD ELEMENTS ──────────────────────── */
+ 
 .folder-name {
-    width: 60%;
-    margin: auto;
-    padding-bottom: 1rem;
-    text-align: center;
+    width: auto;
+    margin: 0;
+    padding-bottom: 0.4rem;
+    text-align: left;
     font-family: "Plus Jakarta Sans", "Inter", sans-serif;
     font-size: 2rem;
     font-weight: 600;
-    color: #18181B;
+    line-height: 1.2;
+    color: var(--text) !important;
 }
-
+ 
 .folder-description {
-    margin-right: 3rem;
-    color: #555;
-    line-height: 1.5;
+    margin-right: 0;
+    color: var(--muted) !important;
+    line-height: 1.65;
+    font-size: 0.97rem;
 }
-
+ 
 .folder-image {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 6rem;
-    height: auto;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;   /* clear gap between icon and text */
+    flex-shrink: 0;
+    opacity: 0.75;
 }
-
+ 
+/* Active state */
 .folder-name.active {
     text-align: left;
-    margin: 0;
-    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    width: 100%;
 }
-
+ 
+.folder-description.active {
+    font-size: 0.97rem;
+}
+ 
+/* Side-by-side layout with breathing room between items and text */
+.base.folder.active {
+    align-items: flex-start !important;
+    gap: 2rem;
+}
+ 
+.base.folder.active > .folder-holder {
+    flex-shrink: 0;
+    width: 40%;
+    margin-top: 0;
+}
+ 
+.base.folder.active > div {
+    flex: 1;
+    min-width: 0;
+}
+ 
+/* The grid of items */
 .folder-holder {
-    background: #ffffff;
-    padding: 3%;
-    margin-left: 4%;
-    margin-right: 5%;
-    justify-content: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    background: var(--bg) !important;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    width: 90%;
 }
-
+ 
 .folder-item {
-    margin: 0;
-    padding: 0.6rem 1.5rem;
-    background: #F9F9F9;
+    padding: 0.45rem 1rem;
+    background: var(--surface) !important;
+    color: var(--text) !important;
     white-space: nowrap;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-    justify-self: center;
-    transition: background-color 0.3s ease;
+    letter-spacing: 0.01em;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    cursor: pointer;
 }
-
+ 
 .folder-item:hover {
-    background-color: #ececec;
-    color: #18181B;
+    background-color: var(--text) !important;
+    color: var(--surface) !important;
+    border-color: var(--text);
 }
-
-/*Responsive*/
+ 
+/* The text + name block next to the image */
+.base.folder > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; /* prevents text from overflowing flex container */
+    flex: 1;
+}
+ 
+/* ── RESPONSIVE ──────────────────────────────── */
+ 
 @media only screen and (max-width: 900px) {
     .folder-name {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     .folder-description {
         font-size: 0.95rem;
-        margin-right: 1.5rem;
     }
     .folder-image {
-        width: 5rem;
-        margin-left: 5%;
-        margin-right: 5%;
+        width: 3rem;
+        height: 3rem;
     }
 }
-
+ 
 @media only screen and (max-width: 650px) {
-    .folder-holder {
-        padding: 1.5rem;
-        margin-left: 2%;
-        margin-right: 2%;
+    .base.folder {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .folder-image {
+        margin-right: 0;
+        margin-bottom: 0.75rem;
     }
     .folder-name {
         text-align: center;
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.35rem;
+        width: 100%;
     }
     .folder-description {
         text-align: center;
-        margin: 0 auto;
-        font-size: 0.9rem;
-        padding: 0 1rem;
+        font-size: 0.92rem;
+        margin: 0;
     }
-    .folder-image {
-        display: block;
-        margin: 0 auto 1rem auto; /* center image */
-        width: 4.5rem;
+    .folder-holder {
+        justify-content: center;
     }
     .folder-item {
-        display: inline-block;
-        font-size: 0.9rem;
-        margin: 0.3rem;
-        padding: 0.5rem 1rem;
+        white-space: normal;
+        text-align: center;
     }
 }
-
+ 
 @media only screen and (max-width: 400px) {
     .folder-name {
         font-size: 1.2rem;
@@ -113,7 +151,7 @@
         font-size: 0.85rem;
     }
     .folder-item {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         padding: 0.4rem 0.8rem;
     }
 }
